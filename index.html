@@ -1,0 +1,86 @@
+<html>
+<head> 
+<title>Calculator</title>
+</head>
+<body>
+    <h1>Calculators</h1>
+    
+<form>
+    <fieldset>
+        <legend>Circle area formula</legend>
+            Radius: <input type="text" id="value1">
+<button type="button" onclick="calcCircle()">Calculate</button>
+
+</form>
+ </fieldset>
+
+ <form>
+    <fieldset>
+        <legend>Midpoint formula</legend>
+            X1: <input type="text" id="value2">
+            Y1: <input type="text" id="value3">
+            X2: <input type="text" id="value4">
+            Y2: <input type="text" id="value5">
+<button type="button" onclick="calcMidpoint()">Calculate</button>
+</fieldset>
+</form>
+
+
+<form>
+  <fieldset>
+      <legend>Area of a Circle from two endpoints</legend>
+          X1: <input type="text" id="value6">
+          Y1: <input type="text" id="value7">
+          X2: <input type="text" id="value8">
+          Y2: <input type="text" id="value9">
+<button type="button" onclick="calcAreaPoint()">Calculate</button>
+</fieldset>
+</form>
+
+
+    <div id="result"></div>
+
+    <button onclick="location.href='https://www.youtube.com/watch?v=xvFZjo5PgG0'" type="button">
+      Finished</button>
+
+</body>
+
+<script>
+    function calcCircle(){
+       var a = parseInt(document.querySelector("#value1").value);
+         var Calculate = a * a * Math.PI;
+          console.log(Calculate)
+            document.querySelector("#result").innerHTML = Calculate;
+    }
+  function calcMidpoint(){
+var b = parseInt(document.querySelector("#value2").value);
+var c = parseInt(document.querySelector("#value3").value);
+var d = parseInt(document.querySelector("#value4").value);
+var e = parseInt(document.querySelector("#value5").value);
+var calculateMidpointX = (b + d)/2;
+var calculateMidpointY = (c + e)/2;
+var array = [calculateMidpointX + "," + calculateMidpointY]
+document.querySelector("#result").innerHTML = array;
+  }
+
+  function calcAreaPoint(){
+    //X1
+var f = parseInt(document.querySelector("#value6").value);
+//Y1
+var g = parseInt(document.querySelector("#value7").value);
+//X2
+var h = parseInt(document.querySelector("#value8").value);
+//Y2
+var i = parseInt(document.querySelector("#value9").value);
+var calculateStep1X = f - h;
+var calculateStep1Y = g - i;
+var calculateStep2X = calculateStep1X * calculateStep1X;
+var calculateStep2Y = calculateStep1Y * calculateStep1Y;
+var calculateStep3 = calculateStep2X + calculateStep2Y;
+var distance = Math.sqrt(calculateStep3);
+var calulatedRadius = distance / 2
+var calulatedArea = calulatedRadius * calulatedRadius * Math.PI;
+document.querySelector("#result").innerHTML = calulatedArea;
+  }
+</script>
+</html>
